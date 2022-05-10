@@ -1,0 +1,446 @@
+{
+	"info": {
+		"_postman_id": "965cc038-ba12-4676-affb-478f2a3124c2",
+		"name": "FLICKRAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1- GET AUTH",
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "callback",
+							"value": "http://example.com",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "ee9f16d0a8e8472c",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "0d370cc7d00efda0e60c03ccd6f6ad89",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "includeBodyHash",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "disableHeaderEncoding",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.flickr.com/services/oauth/request_token",
+					"protocol": "https",
+					"host": [
+						"www",
+						"flickr",
+						"com"
+					],
+					"path": [
+						"services",
+						"oauth",
+						"request_token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2- OAUTH AUTHORISE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.flickr.com/services/oauth/authorize?oauth_token=72157720842756647-10db944e768f5b9b",
+					"protocol": "https",
+					"host": [
+						"www",
+						"flickr",
+						"com"
+					],
+					"path": [
+						"services",
+						"oauth",
+						"authorize"
+					],
+					"query": [
+						{
+							"key": "oauth_token",
+							"value": "72157720842756647-10db944e768f5b9b"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3 Acess token",
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "token",
+							"value": "72157720842756647-10db944e768f5b9",
+							"type": "string"
+						},
+						{
+							"key": "verifier",
+							"value": "618b58171815253f",
+							"type": "string"
+						},
+						{
+							"key": "tokenSecret",
+							"value": "931c8a3cf1c4b764",
+							"type": "string"
+						},
+						{
+							"key": "callback",
+							"value": "http://example.com",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "ee9f16d0a8e8472c",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "0d370cc7d00efda0e60c03ccd6f6ad89",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "includeBodyHash",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "disableHeaderEncoding",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.flickr.com/services/oauth/access_token?oauth_verifier=618b58171815253f",
+					"protocol": "https",
+					"host": [
+						"www",
+						"flickr",
+						"com"
+					],
+					"path": [
+						"services",
+						"oauth",
+						"access_token"
+					],
+					"query": [
+						{
+							"key": "oauth_verifier",
+							"value": "618b58171815253f"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4 GET DATA",
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "tokenSecret",
+							"value": "fc133155f8f2cdda",
+							"type": "string"
+						},
+						{
+							"key": "token",
+							"value": "72157720842778218-7394bed0e605ba42",
+							"type": "string"
+						},
+						{
+							"key": "verifier",
+							"value": "618b58171815253f",
+							"type": "string"
+						},
+						{
+							"key": "callback",
+							"value": "http://example.com",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "ee9f16d0a8e8472c",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "0d370cc7d00efda0e60c03ccd6f6ad89",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "includeBodyHash",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "disableHeaderEncoding",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.flickr.com/services/rest?nojsoncallback=1&format=json&method=flickr.test.login",
+					"protocol": "https",
+					"host": [
+						"www",
+						"flickr",
+						"com"
+					],
+					"path": [
+						"services",
+						"rest"
+					],
+					"query": [
+						{
+							"key": "nojsoncallback",
+							"value": "1"
+						},
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "method",
+							"value": "flickr.test.login"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4.1 GET DATA ",
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "tokenSecret",
+							"value": "fc133155f8f2cdda",
+							"type": "string"
+						},
+						{
+							"key": "token",
+							"value": "72157720842778218-7394bed0e605ba42",
+							"type": "string"
+						},
+						{
+							"key": "verifier",
+							"value": "618b58171815253f",
+							"type": "string"
+						},
+						{
+							"key": "callback",
+							"value": "http://example.com",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "ee9f16d0a8e8472c",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "0d370cc7d00efda0e60c03ccd6f6ad89",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "includeBodyHash",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "disableHeaderEncoding",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.flickr.com/services/rest?nojsoncallback=1&format=json&method=blogs.postPhoto",
+					"protocol": "https",
+					"host": [
+						"www",
+						"flickr",
+						"com"
+					],
+					"path": [
+						"services",
+						"rest"
+					],
+					"query": [
+						{
+							"key": "nojsoncallback",
+							"value": "1"
+						},
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "method",
+							"value": "blogs.postPhoto"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "01 GET POPULAR",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.flickr.com/services/rest/?method=flickr.photos.getPopular&api_key=0d370cc7d00efda0e60c03ccd6f6ad89&user_id=195573215%40N02&format=json&nojsoncallback=1",
+					"protocol": "https",
+					"host": [
+						"www",
+						"flickr",
+						"com"
+					],
+					"path": [
+						"services",
+						"rest",
+						""
+					],
+					"query": [
+						{
+							"key": "method",
+							"value": "flickr.photos.getPopular"
+						},
+						{
+							"key": "api_key",
+							"value": "0d370cc7d00efda0e60c03ccd6f6ad89"
+						},
+						{
+							"key": "user_id",
+							"value": "195573215%40N02"
+						},
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "nojsoncallback",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
